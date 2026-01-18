@@ -2,15 +2,15 @@ const admin = require("firebase-admin");
 const serviceAccount = require("./serviceAccountKey.json");
 
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
+  credential: admin.credential.cert(serviceAccount),
 });
 
-const ADMIN_UID = "Rx9xfu3f4CMU2dSXU20MNUi2TcF3";
+const ADMIN_UID = "3qaEKBjPs8RUxhaEr7xsih45f4l1";
 
 async function setAdmin() {
   try {
     await admin.auth().setCustomUserClaims(ADMIN_UID, {
-      admin: true
+      admin: true,
     });
 
     console.log("Admin role assigned successfully");
